@@ -1,0 +1,79 @@
+index:
+    title: Welcome
+    into: Welcome to EinzigTech
+    slogan: Silently Excellent
+    learn_more: Learn More
+about_us:
+    title: About Us
+    intro: We are a family of world-class developers working together to provide excellent service to you.
+        We started our journey in the year 2010 from a small city and now spreading across the globe
+        with your support. We are continuously evolving by building a great team and excellent services
+        for our clients. We love our works and it makes us happy so do our clients too. Let’s make
+        things better…..
+services:
+    title: Services
+    what_we_do:
+        title: What We Do
+        intro: In short, we provide quality and affordable IT services to our clients. We have a great
+            team of world-class software developers, management to cater all your needs. Our primary
+            objective is to fulfil our customer needs, provide quality consultancy service and on
+            time delivery. It is our customer satisfaction which helps to progress the ladder of our
+            success.
+        software_dev:
+            title: Software development
+            details: Based on our client’s needs our quality consultancy service we build software
+                products for our client’s business. We use almost all latest future friendly
+                technologies which helps you to move beyond your expectation of quality services
+        web_proj:
+            title: Web Project Development
+            details: We are in website development business more than 10 years and we understand what you
+                need and how it has to be delivered. Our team of young and talented web developers
+                will help you to build website as per the latest technologies by fulfilling your needs
+        it_consult:
+            title: IT Consultancy
+            details: Need some advice on IT issues? Get in touch and our team will help you out with any
+                IT issues, let it be online or offline
+        bc_dev:
+            title: Blockchain Development
+            details: Looking for some blockchain developer? You are in the right place. We develop
+                decentralised applications including different crypto-currencies
+portfolio:
+    title: Showcase
+    content: See Our Featured Projects
+career:
+    title: Career
+    present_open_position: Present Open Positions
+    experience: Experience
+    skill_set: Skill Set
+    jd: Job Description
+    apply_now: Apply Now
+    no_job:
+        title: It seems like there are no open vacancies for your country.
+        sub_title: If you are still interested, then please drop us a self-initiative application.
+    self_initiative: Self Initiative Applications
+    application_form:
+        title: Application
+        job_posting: Job Position
+        name: Name
+        email: Email
+        phone: Phone
+        message: Message
+        submit: Submit
+    feedback: What Our Employees Say About Us
+contact_us:
+    title: Contact Us
+    get_in_touch: Get In Touch
+    contact_person: Contact Person
+    email: E-mail
+    mobile: Mobile
+    form:
+        title: Send Us A Message
+        name: Name
+        email: Email
+        subject: Subject
+        message: Message
+        submit: Submit
+thank_you:
+    title: Thank you
+    sub_title: for contacting us.
+    get_back: We will get back to you soon.

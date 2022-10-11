@@ -1,0 +1,57 @@
+{% extends 'emails/emailBase.html.twig' %}
+
+{% block content %}
+    <row class="welcome">
+        <columns>
+            <spacer size="35"></spacer>
+            <h1>
+                <center>
+                    There is a
+                    <br> new message
+                    <br> from
+                    <br> Website's contact page
+                </center>
+            </h1>
+            <spacer size="10"></spacer>
+        </columns>
+    </row>
+    <spacer size="30"></spacer>
+    <row>
+        <columns>
+            <p>Subject:</p>
+            <p>{{ subject }}</p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <p>Name:</p>
+            <p>{{ name }}</p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <p>Email:</p>
+            <p>{{ contactEmail }}</p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <p>Message:</p>
+            <p>{{ message }}</p>
+        </columns>
+    </row>
+{% endblock %}
+
+{% block sender %}
+    <row>
+        <columns large="3">
+            <img src="{{ email.image('@public/images/logo.jpg') }}" class="logo-footer" alt="EinzigTech Logo">
+        </columns>
+        <columns large="6" class="large-offset-3">
+            <p>Website</p>
+            <p>EinzigTech Pvt Ltd.</p>
+            <p>https://www.einzigtech.com</p>
+        </columns>
+        <columns large="3"></columns>
+    </row>
+{% endblock %}

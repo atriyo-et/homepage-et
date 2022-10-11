@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script defer src="//maps.google.com/maps/api/js?key={{ mapsKey }}"></script>
+    <script defer src="{{ asset('js/maplace.min.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
+
+{% block headerImage %}
+    <div id="contact-intro" class="bg-image shadow-2-strong parallax">
+        <div class="mask">
+            <div class="container d-flex align-items-center justify-content-center text-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-1 mt-5  wow slideInUp">{{ 'contact_us.title'|trans }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <main class="mt-5 ">
+        <div class="container">
+            <section id="address">
+                <div class="text-center">
+                    <h1 class="mb-3 text-dark display-5  wow slideInUp">{{ 'contact_us.get_in_touch'|trans }}</h1>
+                </div>
+
+                <div class="container-fluid h-100">
+                    <div class="row justify-content-center  wow slideInUp">
+                        <div class="col-md-6 ms-0 gx-5 mb-4 mt-1 p-2 bg-light ">
+                            <div class="card shadow-lg p-3 mb-5 bg-white rounded h-75 card-height">
+                                <div class="p-3">
+                                    <h4><strong>EinzigTech e.U</strong></h4>
+                                    <p id="address-austria" class="text-muted">
+                                        Am Rain 3/Top 107,
+                                        <br> 6020 Innsbruck,
+                                        <br> Tirol, Austria
+                                    </p>
+                                    <p><strong>{{ 'contact_us.contact_person'|trans }}:</strong></p>
+                                    <p class="text-muted">
+                                        Stiff Roy
+                                        <br> {{ 'contact_us.email'|trans }}: <a class="text-dark text-lowercase"><span class="encode email-at">nie</span></a>
+                                        <br> {{ 'contact_us.mobile'|trans }}: <span class="encode phone-at">056</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ms-0 gx-5 mb-4 mt-1 p-2 bg-light ">
+                            <div class="card shadow-lg p-3 mb-5 bg-white rounded h-75 card-height">
+                                <div class="p-3">
+                                    <h4><strong>EinzigTech Pvt. Ltd.</strong></h4>
+                                    <p id="address-india" class="text-muted">
+                                        Nivedita Pally, Noapara,
+                                        <br> Kolkata - 700125,
+                                        <br> West Bengal, India
+                                    </p>
+                                    <p><strong>{{ 'contact_us.contact_person'|trans }}:</strong></p>
+                                    <p class="text-muted">
+                                        Prosenjit Dutta
+                                        <br> {{ 'contact_us.email'|trans }}: <a class="text-dark text-lowercase"><span class="encode email-in">nie</span></a>
+                                        <br> {{ 'contact_us.mobile'|trans }}: <span class="encode phone-in">061</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="map" class="border border-3 border-white rounded-lg rounded-5  wow slideInUp">
+        </section>
+        <section id="contact-form" class="bg-image parallax">
+            <div class="row  justify-content-center">
+                <div class="col-lg-7  wow slideInUp">
+                    <h2 class="text-white mt-5 ms-5">{{ 'contact_us.form.title'|trans }}</h2>
+                    <div class="container-fluid p-5">
+                        {% include '/partials/_form_contact.html.twig' with {'form': form} %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

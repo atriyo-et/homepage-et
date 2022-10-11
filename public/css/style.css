@@ -1,0 +1,422 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/*--------------------Header---------------------*/
+
+#intro {
+    background-image: url("../images/intro.jpg");
+    height: 120vh;
+}
+
+#career-intro {
+    background-image: url("../images/cintro.jpg");
+    height: 85vh;
+}
+
+.mask {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* Height for devices larger than 576px */
+
+@media (min-width: 992px) {
+    #intro {
+        margin-top: -58.59px;
+    }
+}
+
+
+/*--------------------Logo Image---------------------*/
+
+header .img-style {
+    width: 120px;
+    height: 120px;
+    border: 1px solid white;
+    outline: white solid 1px;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 988px) {
+    header .img-style {
+        width: 85px !important;
+        height: 78px !important;
+        border: 1px solid white;
+        outline: white solid 1px;
+        margin-top: 5px;
+        margin-left: 10px;
+        padding: 5px;
+    }
+}
+
+
+/*--------------------End Logo Image---------------------*/
+
+
+/*--------------------Navbar---------------------*/
+
+nav {
+    box-shadow: none !important;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.navbar.shrink {
+    background-color: #816116;
+    height: 120px;
+}
+
+.navbar .nav-link {
+    color: #fff !important;
+    text-transform: uppercase;
+}
+
+.navbar .nav-link:hover {
+    color: #f9a828 !important;
+    text-transform: uppercase;
+}
+
+.nav-item.current {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+    text-decoration-color: #fff !important;
+}
+
+.nav-flex-icons {
+    float: left;
+    list-style: none;
+    padding-top: 13px;
+}
+
+@media (max-width: 1000px) {
+    .navbar-nav {
+        background: rgb(0, 0, 0, 0.7);
+        backdrop-filter: blur(7px);
+        width: 10rem;
+        margin-left: 0 !important;
+        margin-top: -2.5rem;
+    }
+
+    .navbar-nav.mb-2 {
+        margin-bottom: 0 !important;
+    }
+
+    .nav-flex-icons {
+        background: rgb(0, 0, 0, 0.7);
+        backdrop-filter: blur(7px);
+        width: 10rem;
+        padding-top: 0;
+        margin-top: -2px;
+    }
+}
+
+/*--------------------index page---------------------*/
+
+.vl {
+    border-left: 3px solid #AFA6A5;
+    height: 100px;
+    position: relative;
+    left: 50%;
+    margin-left: -3px;
+}
+
+#about h1 {
+    letter-spacing: .3rem;
+}
+
+#services {
+    background-image: url("../images/services.jpg");
+}
+
+#services h5 {
+    letter-spacing: .2rem;
+}
+
+#services text {
+    font-family: "librebaskerville-regular", serif;
+}
+
+.mask-services {
+    background-color: rgba(1, 1, 1, 0.7) !important;
+}
+
+#services .fa {
+    font-size: 2.4rem;
+    color: #f9a828;
+}
+
+#portfolio {
+    background: linear-gradient(to top, #fff 25%, #000 75%);
+}
+
+#portfolio h4 {
+    letter-spacing: .2rem;
+}
+
+#portfolio img {
+    width: 100px;
+    height: 230px;
+}
+
+@media (max-width: 990px) {
+    #portfolio img {
+        width: 100px;
+        height: 200px;
+    }
+}
+
+#technologies {
+    background-color: #E0E0E0;
+}
+
+#technologies img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+/*--------------------End index page---------------------*/
+
+/*--------------------Contact page start---------------------*/
+
+/*--------------------Map---------------------*/
+
+#map {
+    height: 600px;
+    width: 100%;
+}
+
+.marker-image {
+    height: 82px;
+    width: 82px;
+    padding-right: 5px;
+}
+
+.on_gmap.gmap_controls {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    #map {
+        height: 450px;
+    }
+}
+
+/*--------------------End Map---------------------*/
+
+#contact-intro {
+    background-image: url("../images/cintro.jpg");
+    height: 85vh;
+}
+
+@media(max-width: 776px) {
+    #address .card {
+        height: 100vh;
+    }
+}
+
+#contact-form {
+    background-image: url("../images/bg.jpg");
+}
+
+@media(max-width: 776px) {
+    #contact-form {
+        background-image: url("../images/bg.jpg");
+    }
+}
+
+.form-control {
+    border: none !important;
+}
+
+/*--------------------End Contact page---------------------*/
+
+/*----------------Career----------------------*/
+
+#apply {
+    background-image: url("../images/bg.jpg");
+}
+
+@media (max-width: 776px) and (min-width: 320px) {
+    #apply {
+        background-image: url("../images/bg.jpg");
+    }
+}
+
+#apply h5 {
+    letter-spacing: .2rem;
+}
+
+/* card scroll bar  */
+
+.scrollbar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.scrollbar {
+    position: relative;
+    height: 150px;
+    overflow: auto;
+}
+
+#positions .card {
+    background-color: #074f65;
+    box-shadow: 0 10px 10px 0 grey;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+}
+
+.text-color {
+    color: #5ebdd4;
+    filter: brightness(1.80);
+}
+
+.text-blue {
+    color: #07617d;
+}
+
+.btn-inverted {
+    background-color: #074f65;
+    font-family: Georgia, serif;
+}
+
+.feedback-inner {
+    height: 450px;
+    overflow-y: auto;
+}
+
+@media(min-width: 576px) {
+    .feedback-inner {
+        height: 445px;
+    }
+}
+
+@media(min-width: 768px) {
+    .feedback-inner {
+        height: 385px;
+    }
+}
+
+@media(min-width: 992px) {
+    .feedback-inner {
+        height: 420px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .feedback-inner {
+        height: 390px;
+    }
+}
+
+@media(min-width: 1400px) {
+    .feedback-inner {
+        height: 365px;
+    }
+}
+
+#feedback h5 {
+    font-family: "montserrat-bold", sans-serif;
+    letter-spacing: .1rem;
+}
+
+#feedback p {
+    font-family: "librebaskerville-bold", serif;
+}
+
+#feedback img {
+    height: 100px;
+    width: 100px;
+}
+
+.card-height {
+    height: 90%!important;
+}
+
+/*--------------------End Career---------------------*/
+
+/*--------------Footer-----------------*/
+
+footer ul li a {
+    color: grey;
+}
+
+footer .footer-contact {
+    background-color: #000;
+    font-family: "montserrat-regular", sans-serif;
+}
+
+footer a:hover,
+a:focus {
+    color: #f9a828 !important;
+}
+
+.copyright {
+    background-color: #E0E0E0;
+}
+
+/*--------------------End Footer---------------------*/
+
+/*---------------------Go To Top-------------------*/
+
+#go-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#go-to-top:hover {
+    background-color: #555;
+}
+
+.fs-6 {
+    font-size: 0.92rem !important;
+}
+
+.encode {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.encode.email-at:before, .encode.email-in:before { content:"moc.hcetgiz" }
+.encode.email-at:after { content:"@eciffo" }
+.encode.email-in:after { content:"@aidni" }
+.encode.phone-at:before { content:"7367399" }
+.encode.phone-at:after { content:" 34+" }
+.encode.phone-in:before { content:"918" }
+.encode.phone-in:after { content:"6389 19+" }
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

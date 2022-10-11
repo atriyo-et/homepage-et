@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'index.title'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('/css/owl.carousel.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/css/owl.theme.default.min.css') }}"/>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script defer src="{{ asset('js/owl.carousel.min.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section id="about" class="parallax">
+            <div class="container col-lg-6 mt-5">
+                <div class="row justify-content-center text-center">
+                    <div class="vl wow slideInUp"></div>
+                </div>
+            </div>
+            <div class="container col-lg-6 mb-3 p-1">
+                <div class="row justify-content-center text-center">
+                    <h1 class="wow slideInUp text-blue text-uppercase mt-3 fs-3 fw-bold">
+                        {{ 'about_us.title'|trans }}
+                    </h1>
+                    <div class="mt-5 mb-5 wow slideInUp fs-5 fw-bold p-3">
+                        {{ 'about_us.intro'|trans }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="bg-image shadow-2-strong parallax">
+            <div class="mask-services">
+                <div class="container-fluid d-flex align-items-center justify-content-center text-center h-auto">
+                    <div class="col-lg-9 mt-5">
+                        <div class="row wow slideInUp justify-content-center text-center mt-5">
+                            <h5 class="text-uppercase text-muted mt-5 fs-5 fw-bold">
+                                {{ 'services.title'|trans }}
+                            </h5>
+                            <div class="fs-1 fw-bold text-white">
+                                {{ 'services.what_we_do.title'|trans }}
+                            </div>
+                            <div class="wow slideInUp fs-5 fw-bold text-muted w-75">
+                                {{ 'services.what_we_do.intro'|trans }}
+                            </div>
+                        </div>
+                        <div class="row text-center mt-5 mb-5">
+                            <div class="col-lg-6 mt-4 mb-5 wow slideInUp">
+                                <i class="fa fa-globe"></i>
+                                <div class="mb-3 fs-5 mt-2 text-white">
+                                    {{ 'services.what_we_do.software_dev.title'|trans }}
+                                </div>
+                                <text class="text-white-50 fs-5">
+                                    {{ 'services.what_we_do.software_dev.details'|trans }}
+                                </text>
+                            </div>
+                            <div class="col-lg-6 mt-4 mb-5 wow slideInUp">
+                                <i class="fa fa-archive"></i>
+                                <div class="mb-3 fs-5 mt-2 text-white">
+                                    {{ 'services.what_we_do.web_proj.title'|trans }}
+                                </div>
+                                <text class="text-white-50 fs-5">
+                                    {{ 'services.what_we_do.web_proj.details'|trans }}
+                                </text>
+                            </div>
+                            <div class="col-lg-6 mt-4 mb-5 wow slideInUp">
+                                <i class="fa fa-laptop"></i>
+                                <div class="mb-3 fs-5 mt-2 text-white">
+                                    {{ 'services.what_we_do.it_consult.title'|trans }}
+                                </div>
+                                <text class="text-white-50 fs-5">
+                                    {{ 'services.what_we_do.it_consult.details'|trans }}
+                                </text>
+                            </div>
+                            <div class="col-lg-6 mt-4 mb-5 wow slideInUp">
+                                <i class="fa fa-desktop"></i>
+                                <div class="mb-3 fs-5 mt-2 text-white">
+                                    {{ 'services.what_we_do.bc_dev.title'|trans }}
+                                </div>
+                                <text class="text-white-50 fs-5">
+                                    {{ 'services.what_we_do.bc_dev.details'|trans }}
+                                </text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="parallax">
+            <div class="row p-3 mb-4 justify-content-center text-center">
+                <div class="mt-5"></div>
+                <div class="mt-5"></div>
+                <h4 class="wow slideInUp text-muted text-uppercase mt-4 fs-5 fw-bold">{{ 'portfolio.title'|trans }}</h4>
+                <h1 class="wow slideInUp text-white">{{ 'portfolio.content'|trans }}</h1>
+            </div>
+            <div class="container mt-5 mb-5">
+                <div class="row">
+                    {% for portfolio in portfolioData %}
+                        <div class="hover-zoom col-md-6 col-sm-12">
+                            <a href="{{ portfolio.url }}" target="_blank">
+                                <img
+                                        src="{{ asset(portfolio.image) }}"
+                                        alt="{{ portfolio.name }}"
+                                        data-mdb-img="{{ asset(portfolio.image) }}"
+                                        class="w-100 mb-2 mb-md-4 shadow-1-strong rounded wow slideInUp"
+                                />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="technologies">
+            <div class="container col-md-12 col-sm-12 col-lg-6 text-center">
+                <div class="owl-carousel owl-theme pt-4 text-muted">
+                    <img src="{{ asset('images/technologies/symfony.png') }}" alt="Symfony" title="Symfony"/>
+                    <img src="{{ asset('images/technologies/vuejs.png') }}" alt="Vue Js" title="Vue Js"/>
+                    <img src="{{ asset('images/technologies/nodejs.png') }}" alt="Node Js" title="Node Js"/>
+                    <img src="{{ asset('images/technologies/jQuery.png') }}" alt="jQuery" title="jQuery"/>
+                    <img src="{{ asset('images/technologies/blockchain.png') }}" alt="Blockchain" title="Blockchain"/>
+                    <img src="{{ asset('images/technologies/git.png') }}" alt="Github" title="Github"/>
+                    <img src="{{ asset('images/technologies/php.png') }}" alt="PHP" title="PHP"/>
+                    <img src="{{ asset('images/technologies/javascript.png') }}" alt="Javascript" title="Javascript"/>
+                    <img src="{{ asset('images/technologies/bootstrap.png') }}" alt="Bootstrap" title="Bootstrap"/>
+                    <img src="{{ asset('images/technologies/css.png') }}" alt="Css" title="Css"/>
+                    <img src="{{ asset('images/technologies/html5.png') }}" alt="Html5" title="Html5"/>
+                    <img src="{{ asset('images/technologies/bitbucket.png') }}" alt="Bitbucket" title="Bitbucket"/>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

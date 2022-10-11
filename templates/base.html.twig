@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ asset('images/favicon/ms-icon-144x144.png') }}">
+    <meta name="theme-color" content="#ffffff">
+    <title>{% block title %}{% endblock %} | EinzigTech</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/mdb.min.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}"/>
+    {% endblock %}
+
+    {% block javascripts %}
+        <script defer type="text/javascript" src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+        <script defer type="text/javascript" src="{{ asset('js/mdb.min.js') }}"></script>
+        <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    {% endblock %}
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('images/favicon/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('images/favicon/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/favicon/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/favicon/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/favicon/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/favicon/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('images/favicon/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/favicon/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/favicon/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('images/favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('images/favicon/manifest.json') }}">
+</head>
+
+<body>
+<button onclick="$(document).scrollTop(0)" id="go-to-top" title="Go to top"> <i class="fas fa-arrow-up"></i></button>
+
+{% block header %}
+    <header id="top">
+        {% block mainNav %}
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a class="navbar-brand mt-2 mt-lg-0" href="{{ url('home') }}">
+                    <img src="{{ asset('images/logo.jpg') }}" id="logo" alt="Logo" class="img-style"/>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+
+                    {{ knp_menu_render('mainMenu') }}
+
+                    <ul class="nav-flex-icons pe-5">
+                        <li class="nav-item">
+                            {% if app.request.locale == 'en' %}
+                                <a href="{{ url('switch-lang', {'locale': 'de'}) }}" class="nav-link flag">
+                                    <img src="{{ asset('images/flag_de.png') }}" alt="EinzigTech in Deutsch">
+                                </a>
+                            {% elseif app.request.locale == 'de' %}
+                                <a href="{{ url('switch-lang', {'locale': 'en'}) }}" class="nav-link flag">
+                                    <img src="{{ asset('images/flag_en.png') }}" alt="EinzigTech in English">
+                                </a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% endblock %}
+
+        {% block headerImage %}
+        <section id="intro" class="bg-image shadow-2-strong parallax">
+            <div class="mask">
+                <div class="container d-flex align-items-center justify-content-center text-center h-100">
+                    <div class="text-white mt-5">
+                        <h1 class="wow slideInUp mb-3">{{ 'index.into'|trans }}</h1>
+                        <h5 class="wow slideInUp mb-4">{{ 'index.slogan'|trans }}</h5>
+                        <a class="wow slideInUp btn btn-outline-light btn-lg m-2" href="{{ url('home') }}#about" role="button" rel="nofollow">
+                            {{ 'index.learn_more'|trans }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+    </header>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="text-lg-start text-center">
+        <div class="footer-contact row text-center p-5">
+            <div class="col-lg-4 mt-5">
+                <h5 class="text-white">EinzigTech e.U.</h5>
+                <p class="text-muted fs-6">
+                    Am Rain 3/Top 107,
+                    <br> 6020 Innsbruck,
+                    <br> Tirol, Austria
+                    <br><i class="fa fa-envelope fa-sm"></i> <span class="encode email-at">nie</span>
+                    <br><i class="fa fa-phone fa-sm"></i> <span class="encode phone-at">056</span>
+                </p>
+            </div>
+            <div class="col-lg-4 mt-5">
+                <h5 class="text-white">EinzigTech Pvt. Ltd.</h5>
+                <p class="text-muted fs-6">
+                    Nivedita Pally, Noapara,
+                    <br> Kolkata - 700125,
+                    <br> West Bengal, India
+                    <br><i class="fa fa-envelope fa-sm"></i> <span class="encode email-in">nie</span>
+                    <br><i class="fa fa-phone fa-sm"></i> <span class="encode phone-in">061</span>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-white mt-5">Follow Us</h5>
+                <ul class="fs-6 list-unstyled">
+                    <li><a href="https://en-gb.facebook.com/Einzigtech-207465192613208/" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/einzigtech" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/company/einzigtech" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright text-center p-2">
+            © {{ date()|date('Y') }} Copyright: <a class="text-dark" href="{{ url('home') }}">EinzigTech</a>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block footerJs %}
+    <script defer type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>

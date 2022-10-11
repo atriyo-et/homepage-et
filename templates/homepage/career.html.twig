@@ -1,0 +1,136 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'career.title'|trans }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
+
+{% block headerImage %}
+    <div id="career-intro" class="bg-image shadow-2-strong parallax">
+        <div class="mask">
+            <div class="container d-flex align-items-center justify-content-center text-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-1 mt-5 wow slideInUp">{{ 'career.title'|trans }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <main class="mt-5">
+        <div class="container">
+            <section id="positions">
+                <div class="text-dark text-center mt-5">
+                    <h1 class="text-blue mb-4 fw-bold wow slideInUp">{{ 'career.present_open_position'|trans }}</h1>
+                </div>
+                <div class="row justify-content-center wow slideInUp">
+                    {% if vacancies %}
+                        {% for vacancy in vacancies %}
+                            <div class="col-lg-4 col-sm-6 mt-1 p-3 h-50">
+                                <div id="{{ vacancy.code }}" class="card">
+                                    <div class="card-header mt-2 text-white card-title text-center">{{ vacancy.title }}</div>
+                                    <div class="card-body">
+                                        <p class="fs-6 mb-4 text-white">
+                                            {{ 'career.experience'|trans }} :
+                                            <text class="text-color">
+                                                {{ vacancy.minExp }} {% if vacancy.maxExp %} - {{ vacancy.maxExp }}{% endif %} years
+                                            </text>
+                                        </p>
+                                        <p class="fs-6 mb-4 text-white">
+                                            {{ 'career.skill_set'|trans }} :
+                                            <text class="text-color">
+                                                {{ vacancy.skills|map(skill => "#{skill.name}")|join(', ') }}
+                                            </text>
+                                        </p>
+                                        <p class="card-text text-white fs-6">Job Description :</p>
+                                        <p class="card-text scrollbar text-color fs-6">
+                                            {{ vacancy.description|raw }}
+                                        </p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <a
+                                                href="#apply"
+                                                onclick="jobApply(this)"
+                                                data-job-code="{{ vacancy.code }}"
+                                                class="btn btn-white text-dark fs-10 ripple-surface btn-sm"
+                                        >
+                                            {{ 'career.apply_now'|trans }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center">
+                            <p>{{ 'career.no_job.title'|trans }}</p>
+                            <p>{{ 'career.no_job.sub_title'|trans }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    <h1 class="text-blue text-center mt-5 mb-4 wow slideInUp">{{ 'career.self_initiative'|trans }}</h1>
+                    <div class="text-center">
+                        <a
+                                href="#apply"
+                                onclick="jobApplySI()"
+                                class="btn btn-inverted text-center text-white fs-10 ripple-surface btn-sm"
+                        >
+                            {{ 'career.apply_now'|trans }}
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="apply" class="bg-image shadow-2-strong mt-5 parallax">
+            <div class="row mt-2">
+                <div class="col-lg-12 text-center">
+                    <h5 class="fs-5 text-white mt-4 mb-4 wow slideInUp">{{ 'career.application_form.title'|trans }}</h5>
+                    <h1 class="display-3 text-white wow slideInUp">{{ 'career.apply_now'|trans }}</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center ms-1 container-fluid mt-3 wow slideInUp">
+                <div class="col-lg-4">
+                    {% include 'partials/_form_career.html.twig' with {'form': form} %}
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback">
+            <div class="row">
+                <div class=" col-lg-12 col-sm-12 text-center mt-5">
+                    <h5 class=" text-blue text-uppercase fs-5 fw-bold wow slideInUp">{{ 'career.feedback'|trans }}</h5>
+                </div>
+                <div class="feedback-inner carousel slide text-center carousel-dark mt-2 p-4 mb-1" data-mdb-ride="carousel">
+                    <div class="carousel-inner wow slideInUp">
+                        {% for review in reviews %}
+                            <div class="carousel-item {% if loop.first %}active{% endif %}" data-mdb-interval="{{ reviewInterval }}">
+                                <img class="rounded-circle img-thumbnail" src="{{ asset(review.image) }}" alt="{{ review.name }}"/>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-8 fs-5 fw-bold h-75">
+                                        <h2 class="mb-4 mt-3 mb-2">{{ review.name }}</h2>
+                                        <p class="text-dark">
+                                            <i class="fa fa-quote-left pe-2"></i>
+                                            {{ review.comment }}
+                                            <i class="fa fa-quote-right pe-2"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled d-flex justify-content-center text-warning">
+                                    <li><i class="fa fa-star fa-sm"></i></li>
+                                    <li><i class="fa fa-star fa-sm"></i></li>
+                                    <li><i class="fa fa-star fa-sm"></i></li>
+                                    <li><i class="fa fa-star fa-sm"></i></li>
+                                    <li><i class="fa fa-star fa-sm"></i></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

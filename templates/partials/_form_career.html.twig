@@ -1,0 +1,37 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-lg-12 mb-4">
+        {{ form_widget(form.jobPosition) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 mb-4">
+        {{ form_widget(form.name) }}
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col-6">
+        {{ form_widget(form.candidateEmail) }}
+    </div>
+    <div class="col-6">
+        {{ form_widget(form.phone) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 mb-4">
+        {{ form_widget(form.cv) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 mb-4">
+        {{ form_widget(form.message) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 mb-4 text-center">
+        <div class="g-recaptcha" data-sitekey="{{ reCaptcha_key }}" style="display: inline-block;"></div>
+    </div>
+</div>
+{{ form_widget(form._token) }}
+<button class="w-100 btn bg-warning text-dark fs-4 fw-bold mb-5" type="submit">{{ 'career.application_form.submit'|trans }}</button>
+{{ form_end(form) }}

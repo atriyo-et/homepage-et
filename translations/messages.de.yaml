@@ -1,0 +1,74 @@
+index:
+    title: Willkommen
+    into: Willkommen bei EinzigTech
+    slogan: Silently Excellent
+    learn_more: Mehr erfahren
+about_us:
+    title: Über uns
+    intro: Unsere Reise beginnt im Jahr 2010, in einer kleinen Stadt in Südasien. Wir sind eine Familie von
+        Weltklasse-Software Entwicklern und Management, die aus Leidenschaft zusammenarbeiten, um alle unsere
+        Kundenbedürfnisse zu erfüllen. Wir haben ein großartiges Team aufgebaut, dass laufend professionellen
+        Zuwachs bekommt. Seit 2021 haben wir zudem einen neuen Standort in Europa.
+        Wir bei EinzigTech, bieten auf Ihre Bedürfnisse zugeschnittene, kosteneffiziente IT-Services,
+        wobei unser oberstes Ziel eine qualitativ hochwertige Beratung und termingerechte Lieferung nach
+        Ihren Wünschen ist – denn Ihr Erfolg ist unser Erfolg!
+services:
+    title: Leistungen
+    what_we_do:
+        title: Was wir tun
+        intro: EinzigTech bietet hochqualitative IT Services zu top Preisen - von Team Erweiterungen,
+            über Managed Teams bis hin zu Freelancer Placements und Beratung - IT Outsourcing das funktioniert!
+        software_dev:
+            title: Software-Entwicklung
+            details: Wir verwenden zukunfts freundliche Technologien und konzipieren, implementieren und warten softwares und App’s
+        web_proj:
+            title: Entwicklung von Webprojekten
+            details: Mit bereits mehr als 10 Jahren Erfahrung in der Website-Entwicklung helfen wir Ihnen,
+                mit modernsten Technologien eine Performance nach Ihren Wünschen zu erstellen
+        it_consult:
+            title: IT Beratung
+            details: Brauchen Sie Beratung zu IT-Fragen? Kontaktieren Sie uns - und wir helfen Ihnen gerne bei allen
+                IT-Problemen, sei es online oder offline
+        bc_dev:
+            title: Blockchain-Entwicklung
+            details: Wir sind Experten in der Entwicklung  dezentraler Anwendungen einschließlich verschiedener Kryptowährungen
+portfolio:
+    title: Portfolio
+    content: Siehe unsere vorgestellten Projekte an
+career:
+    title: Karriere
+    present_open_position: Offene Stellen
+    experience: Erfahrung
+    skill_set: Fähigkeiten
+    jd: Arbeitsbeschreibung
+    apply_now: Jetzt bewerben
+    no_job:
+        title: Es gibt keine offenen Stellen für Ihr Land.
+        sub_title: Wenn Sie noch Interesse haben, dann bewerben Sie sich bitte Initiativbewerbung bei uns.
+    self_initiative: Initiativbewerbung
+    application_form:
+        title: Bewerbung
+        job_posting: Berufliche Stellung
+        name: Name
+        email: Email
+        phone: Telefonnummer
+        message: Nachricht
+        submit: Senden
+    feedback: Was unsere Mitarbeiter über uns sagen
+contact_us:
+    title: Kontakt
+    get_in_touch: Sich melden
+    contact_person: Kontakt Person
+    email: Email
+    mobile: Handy
+    form:
+        title: Schick uns eine Nachricht
+        name: Name
+        email: Email
+        subject: Betreff
+        message: Nachricht
+        submit: Senden
+thank_you:
+    title: Danke Schön
+    sub_title: dass sie uns kontaktiert haben.
+    get_back: Wir werden uns bald bei Ihnen melden.

@@ -1,0 +1,33 @@
+{% apply inky_to_html|inline_css(source('@public/css/foundation.css'), source('@public/css/foundation-emails.css'), source('@public/css/email-style.css')) %}
+    <container>
+        <row class="header">
+            <columns>
+                <a href="https://www.einzigtech.com">
+                    <img src="{{ email.image('@public/images/logo-horizontal.jpg') }}" class="logo" alt="EinzigTech Logo">
+                </a>
+            </columns>
+        </row>
+
+        {% block content %}
+        {% endblock %}
+
+        <row class="footer">
+            <columns>
+                {% block sender %}
+                    <p>Cheers,</p>
+                    <p>Your friendly <em>EinzigTech Team</em></p>
+                {% endblock %}
+            </columns>
+        </row>
+        <row class="bottom">
+            <columns>
+                <center>
+                    <spacer size="20"></spacer>
+                    <div>
+                        Sent with ❤️ from the EinzigTech Team
+                    </div>
+                </center>
+            </columns>
+        </row>
+    </container>
+{% endapply %}
